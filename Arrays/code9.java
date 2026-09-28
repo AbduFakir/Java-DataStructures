@@ -2,30 +2,68 @@
 
 //Brute Force
 
+// class Arrays{
+//     public static void main(String[] args) {
+//         int arr[] = new int[]{1,2,3,4,5,6};
+
+//         int R =2;
+
+//         int N = arr.length;
+
+
+//         int rArray[] = new int[N];
+
+//         int index = 0;
+
+//         for(int i = 0; i<N; i++){
+//             if(i<R){
+//                 rArray[i] = arr[N - R +i];
+//             }else{
+//                 rArray[i] = arr[index];
+//                 index++;
+//             }
+//         }
+
+//         for(int i = 0; i<N; i++){
+//             System.out.println(rArray[i]);
+//         }
+//     }
+// }
+
+
+//In place Rotation using swap method
+
 class Arrays{
     public static void main(String[] args) {
-        int arr[] = new int[]{1,2,3,4,5,6};
+        int arr[] = new int[]{1,2,3,4,5,6,7};
 
         int R =2;
 
         int N = arr.length;
 
+        //Reverse Array
+        for(int i =0; i <N/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[N-i-1];
+            arr[N-i-1] = temp;
+        }
 
-        int rArray[] = new int[N];
+        //Reverse first R elements
+        for(int i = 0; i<R/2; i++){
+            int temp = arr[i];
+            arr[i] = arr[R-i-1];
+            arr[R-i-1] = temp;
 
-        int index = 0;
+        }
 
-        for(int i = 0; i<N; i++){
-            if(i<R){
-                rArray[i] = arr[N - R +i];
-            }else{
-                rArray[i] = arr[index];
-                index++;
-            }
+        for(int i = R; i<(R+N)/2 ; i++){
+            int temp = arr[i];
+            arr[i] = arr[N+R-i-1];
+            arr[N+R-i-1] = temp;
         }
 
         for(int i = 0; i<N; i++){
-            System.out.println(rArray[i]);
+            System.out.println(arr[i]);
         }
     }
 }
