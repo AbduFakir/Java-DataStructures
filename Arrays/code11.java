@@ -8,21 +8,44 @@ Given an character array(lowercase)
 
 // Brute Force
 
+// class Arrays{
+//     public static void main(String[] args) {
+//         int[] arr = new int[]{'a','b','e','g','a','g'};
+
+//         int count = 0;
+
+//         for(int i =0; i<arr.length; i++){
+//             if(arr[i]=='a'){
+//                 for(int j = i+1; j<arr.length;j++){
+//                     if(arr[j] == 'g'){
+//                         count++;
+//                     }
+//                 }
+//             }
+//         }
+//         System.out.println(count);
+//     }
+// }
+
+
+// Optimized Solution
+
 class Arrays{
     public static void main(String[] args) {
         int[] arr = new int[]{'a','b','e','g','a','g'};
 
-        int count = 0;
+        int count = 0;  //Count of 'a'
+        int pair = 0;   //pair count
 
         for(int i =0; i<arr.length; i++){
             if(arr[i]=='a'){
-                for(int j = i+1; j<arr.length;j++){
-                    if(arr[j] == 'g'){
-                        count++;
-                    }
+                count++;
+            }else{
+                if(arr[i] == 'g'){
+                pair+=count;
                 }
             }
         }
-        System.out.println(count);
+        System.out.println(pair);
     }
 }
