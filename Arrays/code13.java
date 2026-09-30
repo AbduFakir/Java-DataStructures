@@ -1,6 +1,6 @@
 //Sub-Array
-
 //Find the length of smallest subarray which contains bot minimum and maximum element
+//
 class Arrays {
 
     public static void main(String[] args) {
