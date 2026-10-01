@@ -126,3 +126,4 @@ class Arrays {
         System.out.println("==>" + totalSum);
     }
 }
+
