@@ -116,7 +116,7 @@
 //     }
 // }
 
-//Matrix of size N X M => print all the diagonals (R->L)
+//Matrix of size N X M => print all the diagonals (R->L) . diagonal starting with 0th row
 
 class Matrix {
 
